@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fronted</title>
+    <link rel="stylesheet" href="all.css">
+</head>
+<body>
+    <div id="navbar">
+     
+        <div> <a href="Backend.html">Backend</a> </div>
+        <div><a href="fronted.html">Fronted</a></div>
+        
+        
+       
+    </div>
+</body>
+</html>
+
+<script>
+    
+   var big=document.createElement("div")
+   big.setAttribute("id","big1")
+   document.querySelector("body").append(big)
+
+   var data=JSON.parse(localStorage.getItem("localdata")) || [];
+   data.forEach(function(el){
+      var a= document.createElement("img")
+      var b= document.createElement("h1")
+      var c= document.createElement("h3")
+      var d= document.createElement("img")
+    //   d.setAttribute("id","img1")
+      
+
+
+      a.src=el.photo
+      b.innerText=el.name
+      c.innerText=el.role
+      d.src=el.companylogo
+      
+      d.style.width="100px";
+      d.style.marginLeft="80px"
+      b.style.textAlign="center"
+      c.style.textAlign="center"
+      
+    
+    
+    var box= document.createElement("div")
+    // box.setAttribute("id","box1")
+    box.append(a,b,c,d)
+    // console.log(a,b,c,d)
+    document.querySelector("#big1").append(box)
+   })
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <link rel="stylesheet" href="all.css">
+</head>
+<body>
+    <div id="navbar">
+     
+        <div> <a href="Backend.html">Backend</a> </div>
+        <div><a href="fronted.html">Fronted</a></div>
+        
+    </div>
+    <form id="col">
+        <input type="text" id="image" placeholder="Enter Your your">
+        <input type="text"  id="name" placeholder="Enter Your name">
+        
+        <input type="text"  id="role" placeholder="Enter Your Role">
+        <input type="text"  id="companylogo" placeholder="Enter  Your companylogo">
+        <input type="Submit" >
+    </form>
+</body>
+</html>
+
+
+<script>
+    // var data=[]
+    var data=JSON.parse(localStorage.getItem("localdata"))||[]
+
+    document.querySelector("form").addEventListener("submit",mffun)
+
+    function mffun(){
+        event.preventDefault()
+        dataobj={
+          photo:col.image.value,
+            name:col.name.value,
+            role:col.role.value,
+            companylogo:col.companylogo.value,
+
+        }
+        data.push(dataobj)
+        localStorage.setItem("localdata",JSON.stringify(data))
+        
+    }
+     
+</script>
